@@ -15,3 +15,7 @@ x86/
 *.[Cc]ache
 # but keep track of directories ending in .cache
 !*.[Cc]ache/
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+GoogleService-Info.plist
