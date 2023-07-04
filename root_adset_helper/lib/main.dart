@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -49,6 +51,19 @@ class Faction {
   Faction(this.name, this.type);
 }
 
+class MarquisDeCat extends Faction {
+  MarquisDeCat() : super('Marquis de Cat', 'MIL');
+}
+
+class Vagabond extends Faction {
+  static final vagabonds = ['El ladron', 'Ronin', 'Samurai', 'Buho', 'Lechuzo'];
+
+  Vagabond() : super(vagabonds[Random().nextInt(vagabonds.length)], 'INS');
+
+  @override
+  String toString() => 'Vagabond: $name';
+}
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -69,6 +84,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  Vagabond _vagabond = Vagabond();
 
   FirebaseFirestore? db;
   List<Faction> factions = [];
@@ -77,13 +93,11 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     db = FirebaseFirestore.instance;
-    setState(() {
-      initLista();
-    });
+    initLista();
   }
 
-  void initLista() {
-    db?.collection('factions').get().then((value) => {
+  void initLista() async {
+    await db?.collection('factions').get().then((value) => {
           value.docs.forEach((element) {
             factions.add(Faction(element.get('name'), element.get('type')));
           })
@@ -97,7 +111,6 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter++;
     });
   }
 
@@ -137,13 +150,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(factions.map((e) => '${e.name}:${e.type}').toString()),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+          children: factions.map((faction) {
+            return Text(faction.name);
+          }).toList(),
         ),
       ),
       floatingActionButton: FloatingActionButton(
