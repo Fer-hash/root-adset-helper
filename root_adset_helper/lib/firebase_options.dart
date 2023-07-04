@@ -44,7 +44,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCkBhfhYjmDbHz9q3bak4x5cd47p1aHtUI',
+    apiKey: 'AIzaSyD4VmEwjd3wWT1NpeKM5RAzYiSdzTH7BPU',
     appId: '1:799021501816:web:271a33ef1ec34810a78c8d',
     messagingSenderId: '799021501816',
     projectId: 'root-adset-helper',
@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCo2DJB6OjeITkDRm3aO_BEHpBxTRsWUJc',
+    apiKey: 'AIzaSyA2VIXnHvgRBvfwvjt9fTWUoH8_bjNC9Y0',
     appId: '1:799021501816:android:4578b63ef564ba1aa78c8d',
     messagingSenderId: '799021501816',
     projectId: 'root-adset-helper',
@@ -62,24 +62,22 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDlwlw-g8vzQmt70T_0Kxy0Ev351weD6B0',
+    apiKey: 'AIzaSyCmsuQIQMa1_U9R9qg-iIk1z5QTs9oMWOY',
     appId: '1:799021501816:ios:69884100ed9e02eea78c8d',
     messagingSenderId: '799021501816',
     projectId: 'root-adset-helper',
     storageBucket: 'root-adset-helper.appspot.com',
-    iosClientId:
-        '799021501816-vrftclgssav989atitt2g4uemfpko586.apps.googleusercontent.com',
+    iosClientId: '799021501816-vrftclgssav989atitt2g4uemfpko586.apps.googleusercontent.com',
     iosBundleId: 'com.example.rootAdsetHelper',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDlwlw-g8vzQmt70T_0Kxy0Ev351weD6B0',
+    apiKey: 'AIzaSyCmsuQIQMa1_U9R9qg-iIk1z5QTs9oMWOY',
     appId: '1:799021501816:ios:15e47e37c1358a93a78c8d',
     messagingSenderId: '799021501816',
     projectId: 'root-adset-helper',
     storageBucket: 'root-adset-helper.appspot.com',
-    iosClientId:
-        '799021501816-on552fbd895t92cdpujsnugrnv3nqofd.apps.googleusercontent.com',
+    iosClientId: '799021501816-on552fbd895t92cdpujsnugrnv3nqofd.apps.googleusercontent.com',
     iosBundleId: 'com.example.rootAdsetHelper.RunnerTests',
   );
 }
